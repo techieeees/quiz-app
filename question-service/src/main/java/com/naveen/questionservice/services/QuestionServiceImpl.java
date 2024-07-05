@@ -33,8 +33,7 @@ public class QuestionServiceImpl implements QuestionService {
 		if (optionalQuestion.isPresent()) {
 			throw new QuestionAlreadyExistsException("Question with the same title already exists");
 		}
-		Question questionAdded = questionDao.save(questionToBeAdded);
-		return questionAdded;
+		return questionDao.save(questionToBeAdded);
 	}
 
 }
