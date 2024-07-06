@@ -22,9 +22,8 @@ public class QuestionServiceImpl implements QuestionService {
 	@Override
 	public List<QuestionWrapperDto> getAllQuestions(String category) {
 		List<Question> questions = questionDao.findByCategoryOrAll(category);
-		List<QuestionWrapperDto> questionDtos = questions.stream()
+		return questions.stream()
 				.map(question -> modelMapper.map(question, QuestionWrapperDto.class)).toList();
-		return questionDtos;
 	}
 
 	@Override
