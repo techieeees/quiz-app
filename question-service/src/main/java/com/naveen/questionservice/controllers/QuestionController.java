@@ -29,7 +29,7 @@ public class QuestionController {
 
 	@GetMapping(value = "allQuestions")
 	public ResponseEntity<List<QuestionWrapperDto>> getAllQuestions(
-			@RequestParam(name = "category", required = false) String category) {
+			@RequestParam(required = false) String category) {
 		List<QuestionWrapperDto> questionDtos= questionService.getAllQuestions(category);
 		return ResponseEntity.ok(questionDtos);
 	}
